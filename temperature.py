@@ -1,3 +1,4 @@
+import re
 """Classes for working with Temperatures."""
 
 
@@ -14,7 +15,7 @@ class Temperature:
     or Kelvins.
     """
 
-    def __init__(self, degrees=0):
+    def __init__(self, degrees):
         """Initialize temperature with specified degrees.
 
         Args:
@@ -30,9 +31,24 @@ class Temperature:
         Raises:
             TemperatureError: if degrees is not one of the specified
                                      forms
-
         """
-        pass
+        # TODO Handle kelvin and fahrenheit
+        self.celsius = degrees
+
+    @property
+    def celsius(self):
+        """Celsius value of the temperature"""
+        return self.temperature_celsius
+
+    @celsius.setter
+    def celsius(self, celsius):
+        """Sets the value of celsius"""
+        if isinstance(celsius, str):
+            celsius = float(re.sub('[a-zA-Z ]', '', celsius))
+        elif not isinstance(celsius, (int, float)):
+            raise TemperatureError
+        self.temperature_celsius = celsius
+
 
 
     @classmethod

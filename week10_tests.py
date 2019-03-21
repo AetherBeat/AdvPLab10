@@ -1,4 +1,4 @@
-"""Tests for Week 8 Lab.
+"""Tests for Week 10 Lab.
 
 Prof. Joshua Auerbach
 Champlain College
@@ -35,8 +35,8 @@ def equal_to_n_decimal_places(value1, value2, n):
     return f"{value1:.{n}f}" == f"{value2:.{n}f}"
 
 
-class TestWeek8(unittest.TestCase):
-    """Main testing class for Week 8 Lab."""
+class TestWeek10(unittest.TestCase):
+    """Main testing class for Week 10 Lab."""
 
     def test_1_raises(self):
         """Test if the initializer raises errors as specified."""
